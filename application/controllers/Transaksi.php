@@ -36,7 +36,7 @@ class Transaksi extends CI_Controller
         $this->template->display('backend/transaksi/peminjaman', $data);
     }
 
-    public function prosesPinjam()
+    public function proses_pinjam()
     {
         $data['siswa_id'] = $this->input->post('save_id_siswa');
         $data['kodeunik_pinjam'] = $this->pinjam->get_kodePinjam();

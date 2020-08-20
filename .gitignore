@@ -33,8 +33,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 harvialtev2/*
 user_guide/*
 
-assets/adminlte/*
-!assets/adminlte/bower_components/*
-!assets/adminlte/dist/*
-!assets/adminlte/plugins/*
 

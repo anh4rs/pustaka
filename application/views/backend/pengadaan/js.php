@@ -45,7 +45,7 @@
 								"data": "pengadaan_tanggal"
 							},
 							{
-								"data": "buku_id"
+								"data": "buku_judul"
 							},
 							{
 								"data": "pengadaan_asal_buku"

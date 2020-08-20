@@ -21,24 +21,24 @@
 		</form>
 		<ul class="sidebar-menu" data-widget="tree">
 			<li class="header">TRANSAKSI</li>
-			<li class="treeview <?= $this->router->fetch_class() == 'transaksi' ? 'active' : ''  ?> menu-open">
-				<a href="#"><i class="fa fa-link"></i> <span>TRANSAKSI</span>
+			<li class="treeview <?= $this->router->fetch_class() == 'transaksi' ? 'active' : ''  ?> ">
+				<a href="#">
+					<i class="fa fa-handshake-o"></i> <span>Transaksi Peminjaman</span>
 					<span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 					</span>
 				</a>
-				<ul class="treeview-menu ">
-					<li <?= ($this->router->fetch_class() == 'transaksi') or (($this->router->fetch_class() == 'transaksi') && $this->router->fetch_method() == 'index') ? 'class="active"' : ''  ?>"><a href="<?= base_url() ?>transaksi">Daftar Pinjaman</a></li>
-					<li <?= $this->router->fetch_class() == 'transaksi' && $this->router->fetch_method() == 'pinjam' ? 'class="active"' : ''  ?>"><a href="<?= base_url() ?>transaksi/pinjam">Peminjaman Buku</a></li>
-					<li><a href="#">Pengembalian</a></li>
+				<ul class="treeview-menu">
+					<li <?= $this->router->fetch_class() == 'transaksi' && $this->router->fetch_method() == 'index' ? 'class="active"' : ''  ?>><a href="<?= site_url('transaksi'); ?>"><i class="fa fa-circle-o"></i> Data semua transaksi</a></li>
+					<li <?= $this->router->fetch_class() == 'transaksi' && $this->router->fetch_method() == 'create' ? 'class="active"' : ''  ?>><a href="<?= site_url('transaksi/pinjam'); ?>"><i class="fa fa-circle-o"></i> Tambah transaksi baru</a></li>
 				</ul>
 			</li>
 			<li class="header">MASTER</li>
 			<li class="<?= $this->router->fetch_class() === 'kategori' ? 'active' : '' ?>"><a href="<?= base_url() ?>kategori"><i class="fa fa-link"></i> <span>Kategori</span></a></li>
 			<li class="<?= $this->router->fetch_class() === 'penerbit' ? 'active' : '' ?>"><a href="<?= base_url() ?>penerbit"><i class="fa fa-link"></i> <span>Penerbit</span></a></li>
 			<li class="<?= $this->router->fetch_class() === 'pengadaan' ? 'active' : '' ?>"><a href="<?= base_url() ?>pengadaan"><i class="fa fa-link"></i> <span>Pengadaan</span></a></li>
-			<li class="<?= $this->router->fetch_class() === 'buku' ? 'active' : '' ?>"><a href="<?= base_url() ?>buku"><i class="fa fa-link"></i> <span>Buku</span></a></li>
-			<li class="<?= $this->router->fetch_class() === 'siswa' ? 'active' : '' ?>"><a href="<?= base_url() ?>siswa"><i class="fa fa-link"></i> <span>Siswa</span></a></li>
+			<li class="<?= $this->router->fetch_class() === 'buku' ? 'active' : '' ?>"><a href="<?= base_url() ?>buku"><i class="fa fa-book"></i> <span>Buku</span></a></li>
+			<li class="<?= $this->router->fetch_class() === 'siswa' ? 'active' : '' ?>"><a href="<?= base_url() ?>siswa"><i class="fa fa-users"></i> <span>Siswa</span></a></li>
 			<li class="header">LAPORAN</li>
 			<li class="treeview">
 				<a href="#"><i class="fa fa-link"></i> <span>Laporan</span>

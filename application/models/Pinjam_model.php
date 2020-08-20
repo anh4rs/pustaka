@@ -25,6 +25,8 @@ class Pinjam_model extends CI_Model
         $this->datatables->join('siswa', 'pinjam.siswa_id = siswa.siswa_id');
         $this->datatables->join('pinjamitem', 'pinjam.pinjam_id = pinjamitem.pinjam_id');
         $this->datatables->join('buku', 'pinjamitem.buku_id = buku.buku_id');
+        $this->datatables->group_by("pinjam.pinjam_id");
+
         $this->datatables->add_column('action', anchor(site_url('pinjam/read/$1'), 'Read') . " | " . anchor(site_url('pinjam/update/$1'), 'Update') . " | " . anchor(site_url('pinjam/delete/$1'), 'Delete', 'onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'pinjam_id');
         return $this->datatables->generate();
     }

@@ -18,10 +18,11 @@ class Pengadaan_model extends CI_Model
     // datatables
     function json()
     {
-        $this->datatables->select('pengadaan_id,pengadaan_tanggal,buku_id,pengadaan_asal_buku,pengadaan_jumlah,pengadaan_keterangan');
-        $this->datatables->from('pengadaan');
+        $this->datatables->select('p.pengadaan_id as pengadaan_id, p.pengadaan_tanggal as pengadaan_tanggal,b.buku_judul as buku_judul, p.pengadaan_asal_buku as pengadaan_asal_buku, p.pengadaan_jumlah as pengadaan_jumlah,p.pengadaan_keterangan as pengadaan_keterangan');
+        $this->datatables->from('pengadaan as p');
         //add this line for join
         //$this->datatables->join('table2', 'pengadaan.field = table2.field');
+        $this->datatables->join('buku as b', 'p.buku_id = b.buku_id', 'left');
         $this->datatables->add_column('action', '
         	<button type="button" class="btn btn-info btn-sm" onclick="btnEdit(\'$1\')" title="Edit"> <i class="fa fa-pencil" aria-hidden="true"></i> </button>
         	<button type="button" class="btn btn-danger btn-sm" onclick="btnDel(\'$1\')" title="Hapus"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
